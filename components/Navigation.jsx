@@ -1,15 +1,10 @@
 import { Container, Text, Grid, Button } from "@nextui-org/react";
 import Link from "next/link";
 import CategoryButton from "./Navigation components/CategoryButton";
+import { navContent } from "../data/navigation";
 
 const Navigation = () => {
-  const navContent = [
-    { text: "Start", href: "/" },
-    { text: "Usługi", href: "/usługi" },
-    { text: "Realizacje", href: "/realizacje" },
-    { text: "Kontakt", href: "/kontakt" },
-    { text: "Bezpłatna wycena", href: "/wycena", light: false },
-  ];
+ 
 
   return (
     <Container css={{ textAlign: "center", minHeight: "70px" }}>
