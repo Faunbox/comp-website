@@ -3,5 +3,5 @@ export const navContent = [
   { text: "Usługi", href: "/usługi" },
   { text: "Realizacje", href: "/realizacje" },
   { text: "Kontakt", href: "/kontakt" },
-  { text: "Bezpłatna wycena", href: "/wycena", light: false },
+  { text: "Wycena", href: "/wycena", light: false },
 ];

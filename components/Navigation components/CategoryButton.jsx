@@ -6,11 +6,11 @@ const CategoryButton = ({ text, href, light = true }) => {
     <Link href={href}>
       {light ? (
         <Button auto light>
-          <Text h3>{text}</Text>
+          <Text h4>{text}</Text>
         </Button>
       ) : (
         <Button auto ghost>
-          <Text h3>{text}</Text>
+          <Text h4>{text}</Text>
         </Button>
       )}
     </Link>

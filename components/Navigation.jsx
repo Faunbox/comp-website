@@ -1,45 +1,37 @@
-import { Container, Text, Grid, Button } from "@nextui-org/react";
+import { Container, Text, Grid, Button, Navbar } from "@nextui-org/react";
 import Link from "next/link";
-import CategoryButton from "./Navigation components/CategoryButton";
 import { navContent } from "../data/navigation";
 
 const Navigation = () => {
- 
-
   return (
-    <Container css={{ textAlign: "center", minHeight: "70px" }}>
-      <Grid.Container alignItems={"center"} gap={2}>
-        <Grid xs={6} justify="flex-start">
-          <Link href="/">
-            <Text css={{ cursor: "pointer" }} h2>
-              Sojecki_dev
-            </Text>
-          </Link>
-        </Grid>
-        <Grid justify="flex-end" xs={3}>
-          <Text b>
-            Masz pytania? <a href="phoneto:604181632">604181632</a>
-          </Text>
-        </Grid>
-        <Grid justify="flex-end" xs={3}>
-          <Text b>
-            Wolisz napisać?{" "}
-            <a href="mailto:faunbox2@gmail.com">faunbox2@gmail.com</a>
-          </Text>
-        </Grid>
-      </Grid.Container>
-      <Grid.Container justify="space-around" alignItems="center">
+    <Navbar shouldHideOnScroll variant={"sticky"} className="navigation">
+      <Navbar.Brand>
+        <Text b h3>
+          Sojecki_studio
+        </Text>
+      </Navbar.Brand>
+      <Navbar.Toggle showIn="xs" aria-label="toogle-menu" />
+      <Navbar.Content hideIn={"xs"}>
         {navContent.map((category) => (
-          <Grid xs={2} key={category.text}>
-            <CategoryButton
-              text={category.text}
-              href={category.href}
-              light={category.light}
-            />
-          </Grid>
+          <Navbar.Link key={category.text} href={category.href}>
+            {category.text}
+          </Navbar.Link>
         ))}
-      </Grid.Container>
-    </Container>
+      </Navbar.Content>
+      <Navbar.Collapse css={{ overflowX: "hidden" }}>
+        {navContent.map((category, index) => (
+          <Navbar.CollapseItem key={category.text}>
+            <Link
+              color="inherit"
+              css={{ minWidth: "100%" }}
+              href={category.href}
+            >
+              {category.text}
+            </Link>
+          </Navbar.CollapseItem>
+        ))}
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
