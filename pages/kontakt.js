@@ -1,6 +1,6 @@
 import { Text, Container } from "@nextui-org/react";
 
-import client from "../assets/contentful";
+import client from "../libs/contentful";
 
 export async function getStaticProps() {
   const post = await client.getEntry("w2yMYaiKVcvnRsfP6opum");
