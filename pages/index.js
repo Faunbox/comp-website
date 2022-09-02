@@ -1,10 +1,13 @@
-import Head from "next/head";
-import { Container, Text } from "@nextui-org/react";
+import HeroSection from "../components/Hero";
+import Benefits from "../components/Benefits";
+import Offert from "../components/Offert";
 
 export default function Home() {
   return (
-    <Container css={{ height: "100vh" }}>
-      <Text> Działa</Text>
-    </Container>
+    <>
+      <HeroSection />
+      <Benefits />
+      <Offert />
+    </>
   );
 }

@@ -11,6 +11,7 @@ import { SunIcon } from "./Navigation components/SunIcon";
 import { MoonIcon } from "./Navigation components/MoonIcon";
 import Link from "next/link";
 import { navContent } from "../data/navigation";
+import { constans } from "../data/constans";
 
 const Navigation = () => {
   const { setTheme } = useNextTheme();
@@ -21,13 +22,14 @@ const Navigation = () => {
       shouldHideOnScroll
       variant={"sticky"}
       className="navigation"
-      css={{ maxW: "100%" }}
-      isBordered
+      css={{ background: "$bgc" }}
     >
       <Navbar.Brand>
-        <Text b h3>
-          Sojecki_studio
-        </Text>
+        <Link href={"/"}>
+          <Text b h3 css={{ cursor: "pointer" }}>
+            {constans.company_name}
+          </Text>
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle showIn="xs" aria-label="toogle-menu" />
       <Navbar.Content hideIn={"xs"} activeColor={"warning"}>
@@ -40,9 +42,9 @@ const Navigation = () => {
           shadow
         />
         {navContent.map((category) => (
-          <Navbar.Link key={category.text} href={category.href}>
-            {category.text}
-          </Navbar.Link>
+          <Link href={category.href} key={category.text}>
+            <Navbar.Link>{category.text}</Navbar.Link>
+          </Link>
         ))}
       </Navbar.Content>
       <Navbar.Collapse css={{ overflowX: "hidden" }}>

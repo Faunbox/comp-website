@@ -1,5 +1,6 @@
 import { Container, Text, Grid, Button } from "@nextui-org/react";
 import Link from "next/link";
+import { constans } from "../data/constans";
 import { navContent } from "../data/navigation";
 
 const Footer = () => {
@@ -14,8 +15,9 @@ const Footer = () => {
       >
         <Grid justify="center" xs={4}>
           <Text>
-            <Text b>Sojecki_dev</Text> - od pomysłu po gotowy projekt. Tworzymy
-            nowoczesne strony internetowe dopasowane pod Twoj biznes.
+            <Text b>{constans.company_name}</Text> - od pomysłu po gotowy
+            projekt. Tworzymy nowoczesne strony internetowe dopasowane pod Twoj
+            biznes.
           </Text>
         </Grid>
         <Grid
